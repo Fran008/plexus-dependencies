@@ -1,0 +1,8 @@
+if [ -e "fran.cfg" ]; then
+sudo mv fran.cfg inicio
+sudo sed '/input_player1/!d' inicio > retroarch2.cf
+sudo sed -i -- 's/input_player1/input_player2/g' retroarch2.cf
+sudo cat retroarch2.cf >> inicio
+sudo rm retroarch2.cf
+sudo mv inicio fran.cfg
+fi
